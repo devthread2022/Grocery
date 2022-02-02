@@ -16,11 +16,11 @@ import com.jvt.devthread.grocery.R;
 
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+public class DashboardCategoryAdapter extends RecyclerView.Adapter<DashboardCategoryAdapter.ViewHolder> {
     public Context context;
     private List<CategoryModel> categoryModelList;
 
-    public CategoryAdapter(Context context, List<CategoryModel> categoryModelList) {
+    public DashboardCategoryAdapter(Context context, List<CategoryModel> categoryModelList) {
         this.context = context;
         this.categoryModelList = categoryModelList;
     }
@@ -28,7 +28,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_layout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dashboard_category,parent,false);
         return new ViewHolder(view);
     }
 
@@ -37,6 +37,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         CategoryModel categoryModel = categoryModelList.get(position);
         Glide.with(context).load(categoryModel.getPic()).into(holder.image);
         holder.name.setText(categoryModel.getName());
+
     }
 
     @Override
@@ -50,7 +51,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.icon);
-            name = itemView.findViewById(R.id.category);
+            name = itemView.findViewById(R.id.name);
         }
     }
 }
