@@ -36,6 +36,14 @@
         android:textSize="12sp"
         android:fontFamily="@font/poppins_light"
         android:id="@+id/date"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_light"
+        android:id="@+id/amount"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
